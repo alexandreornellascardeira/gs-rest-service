@@ -27,13 +27,26 @@ import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMock
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.web.servlet.MockMvc;
 
+
+/**
+ * Allows testing the "Greetings" RESTful Web service.
+ * @author ornellas
+ */
 @SpringBootTest
 @AutoConfigureMockMvc
 public class GreetingControllerTests {
 
+        /**
+         * MockMvc is defined as a main entry point for server-side Spring MVC testing.
+         */
 	@Autowired
 	private MockMvc mockMvc;
 
+        /**
+         * Allows testing "Greetings" RESTful Web service without informing the optional "name" parameter.
+         * Should return "Hello, World!" as greetings message.
+         * @throws Exception 
+         */
 	@Test
 	public void noParamGreetingShouldReturnDefaultMessage() throws Exception {
 
@@ -41,6 +54,11 @@ public class GreetingControllerTests {
 				.andExpect(jsonPath("$.content").value("Hello, World!"));
 	}
 
+         /**
+         * Allows testing "Greetings" RESTful Web service by informing the "name" parameter.
+         * Should return a tailored greetings message.
+         * @throws Exception 
+         */
 	@Test
 	public void paramGreetingShouldReturnTailoredMessage() throws Exception {
 

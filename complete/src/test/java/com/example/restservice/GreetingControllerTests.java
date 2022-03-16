@@ -56,7 +56,7 @@ public class GreetingControllerTests {
 
          /**
          * Allows testing "Greetings" RESTful Web service by informing the "name" parameter.
-         * Should return a tailored greetings message.
+         * Should return a tailored greetings message..
          * @throws Exception 
          */
 	@Test
